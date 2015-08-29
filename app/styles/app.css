@@ -33,6 +33,7 @@ body {
   text-align: center;
 }
 .top-title .logo-container {
+  margin-top: 20px;
   display: inline-block;
   height: 150px;
   width: 300px;
@@ -41,7 +42,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .top-title .logo-container {
     margin-top: 60px;
   }
@@ -69,7 +70,7 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .button-set:first-child {
     margin-top: 60px;
   }
@@ -92,7 +93,7 @@ body {
   -webkit-display: flex;
   -moz-display: flex;
 }
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .button-set .button-container {
     flex-direction: column;
     -webkit-flex-direction: column;
