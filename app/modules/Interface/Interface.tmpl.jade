@@ -1,0 +1,50 @@
+div(class="venueselector" ng-click="InterfaceCtrl.choosingVenue=true;")
+	div(class="venuetitle" ng-if="InterfaceCtrl.selectedVenue==null") No Venue Selected
+	div(class="venuetitle" ng-if="InterfaceCtrl.selectedVenue!=null") 
+		i(class="fa fa-home")
+		span Venue: {{InterfaceCtrl.locationOptions[InterfaceCtrl.selectedVenue].name}}
+div(class="top-title")
+	div(class="logo-container")
+	div(class="logo-subtitle") 
+		p "Come Here" system for peachy events staff
+		p ~ V1.0 ~
+
+div(class="button-set")
+	div(class="button-set-title" style="color: #66D55E") Alert staff
+	div(class="button-set-subtitle") This will alert the team member to come to your venue. Please allow time for a response
+	div(class="button-container")
+		div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'alert')") {{v.name}}
+
+
+div(class="button-set")
+	div(class="button-set-title" style="color: #D55E5E") Urgent Call
+	div(class="button-set-subtitle") This will alert the team member to come to your venue ASAP. Please only use if you require urgent support
+	div(class="button-container")
+		div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'urgent')") {{v.name}}
+
+div(class="button-set")
+	div(class="button-set-title") Cancel Call
+	div(class="button-set-subtitle") This will cancel any calls to the staff member
+	div(class="button-container")
+		div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'cancel')") {{v.name}}
+
+
+div(class="venuechooser" ng-show="InterfaceCtrl.selectedVenue==null || InterfaceCtrl.choosingVenue==true")
+	div(class="chooser")
+		div(class="title") What venue are you in?
+		div(class="scroller" id="chooseScroller") 
+			div
+				div(class="venueoption" ng-repeat="(vid,venue) in InterfaceCtrl.locationOptions" ng-click="InterfaceCtrl.changeVenue(vid)") 
+					div(class="icon")
+						i(class="fa fa-home")
+					div(class="v-title") {{venue.name}}
+					div(class="v-subtitle") {{venue.location}}
+
+
+div(class="confirmBox" ng-show="InterfaceCtrl.showConfirm==true")
+	div(class="confirmCenter")
+		div(class="confirmTitle") {{InterfaceCtrl.confirmTitle}}
+		div(class="confirmMsg") {{InterfaceCtrl.confirmMsg}}
+		div(class="confirmbuttons" ng-show="InterfaceCtrl.confirmButton==true")
+			div(class="button confirm" ng-click="InterfaceCtrl.confirmReq('cancel')") Cancel
+			div(class="button cancel" ng-click="InterfaceCtrl.confirmReq('confirm')") Yes

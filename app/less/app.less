@@ -4,6 +4,262 @@
 @import "../bower_components/fontawesome/css/font-awesome.min.css";
 @import "../bower_components/angular-chart.js/dist/angular-chart.css";
 
+*{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+.border-radius(@tl, @tr, @br @bl){
+	border-top-left-radius: @tl*1px;
+	-webkit-border-top-left-radius: @tl*1px;
+	-moz-border-radius-topleft: @tl*1px;
+	border-top-right-radius: @tr*1px;
+	-webkit-border-top-right-radius: @tr*1px;
+	-moz-border-radius-topright: @tr*1px;
+	border-bottom-right-radius: @br*1px;
+	-webkit-border-bottom-right-radius: @br*1px;
+	-moz-border-radius-bottomright: @br*1px;
+	border-bottom-left-radius: @bl*1px;
+	-webkit-border-bottom-left-radius: @bl*1px;
+	-moz-border-radius-bottomleft: @bl*1px;
+}
 
 
 @transTypes: '-webkit-', '-moz-', '-ms-', '-o-', '';
+
+
+html{
+	width: 100%;
+	height: 100%;
+}
+
+
+body{
+	background-color: #282828;
+	position: relative;
+	//background-color: red;
+	color: #EEEEEE;
+	background-image: url('/assets/crowd_1.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.top-title{
+	width: 300px;
+	height: 230px;
+	position: relative;
+	left: 50%;
+	margin-left: -150px;
+	text-align: center;
+	.logo-container{
+		display: inline-block;
+		height: 150px;
+		width: 300px;
+		background-image: url('/assets/peachy.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.logo-subtitle{
+		color: #DCDCDC;
+		text-align: center;
+		p{
+			margin: 2px;
+			font-size: 0.9em;
+		}
+	}
+}
+
+.button-set{
+	position: relative;
+	width: 100%;
+	margin-bottom: 20px;
+	&:after{
+		content: ' ';
+		height: 1px;
+		width: 80%;
+		background-color: #767676;
+		position: absolute;
+		margin-left: 10%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	&:last-child{
+		&:after{
+			display: none;
+		}
+	}
+	.button-set-title{
+		text-align: center;
+		font-size: 1.6em;
+		font-weight: bold;
+	}
+	.button-set-subtitle{
+		font-size: 0.9em;
+		font-style: italic;
+		text-align: center;
+	}
+	.button-container{
+		display: flex;
+		-webkit-display:flex;
+		-moz-display:flex;
+		.button{
+			flex: 1;
+			-webkit-flex: 1;
+			margin: 20px 40px;
+			.border-radius(3,3,3,3);
+			background-color: #FF9F51;
+			height: 70px;
+			text-align: center;
+			line-height: 70px;
+			border: 2px solid white;
+			font-size: 1.6em;
+			cursor: pointer;
+		}
+	}
+}
+.venueselector{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	line-height: 30px;
+	height: 50px;
+	width: 200px;
+	font-size: 0.9em;
+	font-style: italic;
+	i{
+		margin-right: 5px;
+	}
+}
+.confirmBox{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.9);
+	.confirmCenter{
+		border: 4px solid #FF9F51;
+		position: absolute;
+		width: 300px;
+		height: 200px;
+		background-color: white;
+		left: 50%;
+		top: 50%;
+		margin-left: -150px;
+		margin-top: -100px;
+		color: #2B2B2B;
+		.confirmTitle{
+			font-weight: bold;
+			color: #FF9F51;
+			text-align: center;
+			height: 40px;
+			line-height: 40px;
+			font-size: 1.4em;
+			margin-top: 10px;
+		}
+		.confirmMsg{
+			margin: 10px;
+			text-align: center;
+			font-size: 1.1em;
+			height: 45px;
+		}
+		.confirmbuttons{
+			display: flex;
+			-webkit-display: flex;
+			.button{
+				width: 50%;
+				margin: 15px;
+				background-color: red;
+				text-align: center;
+				line-height: 55px;
+				height: 55px;
+				.border-radius(3,3,3,3);
+				color: #fff;
+				font-size: 1.2em;
+				&.confirm{
+					background-color: #66D55E;
+				}
+				&.cancel{
+					background-color: #D55E5E;
+				}
+			}
+		}
+	}
+}
+.venuechooser{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.9);
+	.chooser{
+		border: 4px solid #FF9F51;
+		position: absolute;
+		width: 300px;
+		height: 450px;
+		background-color: #fff;
+		left: 50%;
+		margin-left: -100px;
+		top: 50%;
+		margin-top: -225px;
+		.border-radius(3,3,3,3);
+		.title{
+			font-weight: bold;
+			color: #FF9F51;
+			text-align: center;
+			height: 40px;
+			line-height: 40px;
+			font-size: 1.4em;
+			margin-top: 10px;
+		}
+		.scroller{
+			position: absolute;
+			left: 5px;
+			right: 5px;
+			top: 50px;
+			bottom: 5px;
+			overflow: auto;
+			.venueoption{
+				position: relative;
+				margin: 10px 5px;
+				background-color: #DADADA;
+				height: 60px;
+				color: #363636;
+				.icon{
+					position: absolute;
+					left: 0;
+					top: 0;
+					height: 60px;
+					width: 60px;
+					text-align: center;
+					line-height: 60px;
+					font-size: 1.6em;
+					color: #A4A4A4;
+				}
+				.v-title{
+					font-weight: bold;
+					font-size: 1.2em;
+					margin-left: 50px;
+					height: 30px;
+					line-height: 40px;
+				}
+				.v-subtitle{
+					font-size: 0.9em;
+					margin-left: 50px;
+					height: 30px;
+					line-height: 20px;
+					font-style: italic;
+				}
+			}
+		}
+	}
+}

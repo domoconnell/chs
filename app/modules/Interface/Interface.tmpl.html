@@ -1,0 +1,57 @@
+
+<div ng-click="InterfaceCtrl.choosingVenue=true;" class="venueselector">
+  <div ng-if="InterfaceCtrl.selectedVenue==null" class="venuetitle">No Venue Selected</div>
+  <div ng-if="InterfaceCtrl.selectedVenue!=null" class="venuetitle"> <i class="fa fa-home"></i><span>Venue: {{InterfaceCtrl.locationOptions[InterfaceCtrl.selectedVenue].name}}</span></div>
+</div>
+<div class="top-title">
+  <div class="logo-container"></div>
+  <div class="logo-subtitle"> 
+    <p>"Come Here" system for peachy events staff</p>
+    <p>~ V1.0 ~</p>
+  </div>
+</div>
+<div class="button-set">
+  <div style="color: #66D55E" class="button-set-title">Alert staff</div>
+  <div class="button-set-subtitle">This will alert the team member to come to your venue. Please allow time for a response</div>
+  <div class="button-container">
+    <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'alert')" class="button">{{v.name}}</div>
+  </div>
+</div>
+<div class="button-set">
+  <div style="color: #D55E5E" class="button-set-title">Urgent Call</div>
+  <div class="button-set-subtitle">This will alert the team member to come to your venue ASAP. Please only use if you require urgent support</div>
+  <div class="button-container">
+    <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'urgent')" class="button">{{v.name}}</div>
+  </div>
+</div>
+<div class="button-set">
+  <div class="button-set-title">Cancel Call</div>
+  <div class="button-set-subtitle">This will cancel any calls to the staff member</div>
+  <div class="button-container">
+    <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'cancel')" class="button">{{v.name}}</div>
+  </div>
+</div>
+<div ng-show="InterfaceCtrl.selectedVenue==null || InterfaceCtrl.choosingVenue==true" class="venuechooser">
+  <div class="chooser">
+    <div class="title">What venue are you in?</div>
+    <div id="chooseScroller" class="scroller"> 
+      <div>
+        <div ng-repeat="(vid,venue) in InterfaceCtrl.locationOptions" ng-click="InterfaceCtrl.changeVenue(vid)" class="venueoption"> 
+          <div class="icon"><i class="fa fa-home"></i></div>
+          <div class="v-title">{{venue.name}}</div>
+          <div class="v-subtitle">{{venue.location}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-show="InterfaceCtrl.showConfirm==true" class="confirmBox">
+  <div class="confirmCenter">
+    <div class="confirmTitle">{{InterfaceCtrl.confirmTitle}}</div>
+    <div class="confirmMsg">{{InterfaceCtrl.confirmMsg}}</div>
+    <div ng-show="InterfaceCtrl.confirmButton==true" class="confirmbuttons">
+      <div ng-click="InterfaceCtrl.confirmReq('cancel')" class="button confirm">Cancel</div>
+      <div ng-click="InterfaceCtrl.confirmReq('confirm')" class="button cancel">Yes</div>
+    </div>
+  </div>
+</div>
