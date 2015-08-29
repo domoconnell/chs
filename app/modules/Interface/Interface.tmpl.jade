@@ -9,24 +9,25 @@ div(class="top-title")
 		p "Come Here" system for peachy events staff
 		p ~ V1.0 ~
 
-div(class="button-set")
-	div(class="button-set-title" style="color: #66D55E") Alert staff
-	div(class="button-set-subtitle") This will alert the team member to come to your venue. Please allow time for a response
-	div(class="button-container")
-		div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'alert')") {{v.name}}
+div
+	div(class="button-set")
+		div(class="button-set-title" style="color: #66D55E") Alert staff
+		div(class="button-set-subtitle") This will alert the team member to come to your venue. Please allow time for a response
+		div(class="button-container")
+			div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'alert')") {{v.name}}
 
 
-div(class="button-set")
-	div(class="button-set-title" style="color: #D55E5E") Urgent Call
-	div(class="button-set-subtitle") This will alert the team member to come to your venue ASAP. Please only use if you require urgent support
-	div(class="button-container")
-		div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'urgent')") {{v.name}}
+	div(class="button-set")
+		div(class="button-set-title" style="color: #D55E5E") Urgent Call
+		div(class="button-set-subtitle") This will alert the team member to come to your venue ASAP. Please only use if you require urgent support
+		div(class="button-container")
+			div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'urgent')") {{v.name}}
 
-div(class="button-set")
-	div(class="button-set-title") Cancel Call
-	div(class="button-set-subtitle") This will cancel any calls to the staff member
-	div(class="button-container")
-		div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'cancel')") {{v.name}}
+	div(class="button-set")
+		div(class="button-set-title") Cancel Call
+		div(class="button-set-subtitle") This will cancel any calls to the staff member
+		div(class="button-container")
+			div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'cancel')") {{v.name}}
 
 
 div(class="venuechooser" ng-show="InterfaceCtrl.selectedVenue==null || InterfaceCtrl.choosingVenue==true")

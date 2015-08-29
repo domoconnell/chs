@@ -10,25 +10,27 @@
     <p>~ V1.0 ~</p>
   </div>
 </div>
-<div class="button-set">
-  <div style="color: #66D55E" class="button-set-title">Alert staff</div>
-  <div class="button-set-subtitle">This will alert the team member to come to your venue. Please allow time for a response</div>
-  <div class="button-container">
-    <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'alert')" class="button">{{v.name}}</div>
+<div>
+  <div class="button-set">
+    <div style="color: #66D55E" class="button-set-title">Alert staff</div>
+    <div class="button-set-subtitle">This will alert the team member to come to your venue. Please allow time for a response</div>
+    <div class="button-container">
+      <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'alert')" class="button">{{v.name}}</div>
+    </div>
   </div>
-</div>
-<div class="button-set">
-  <div style="color: #D55E5E" class="button-set-title">Urgent Call</div>
-  <div class="button-set-subtitle">This will alert the team member to come to your venue ASAP. Please only use if you require urgent support</div>
-  <div class="button-container">
-    <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'urgent')" class="button">{{v.name}}</div>
+  <div class="button-set">
+    <div style="color: #D55E5E" class="button-set-title">Urgent Call</div>
+    <div class="button-set-subtitle">This will alert the team member to come to your venue ASAP. Please only use if you require urgent support</div>
+    <div class="button-container">
+      <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'urgent')" class="button">{{v.name}}</div>
+    </div>
   </div>
-</div>
-<div class="button-set">
-  <div class="button-set-title">Cancel Call</div>
-  <div class="button-set-subtitle">This will cancel any calls to the staff member</div>
-  <div class="button-container">
-    <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'cancel')" class="button">{{v.name}}</div>
+  <div class="button-set">
+    <div class="button-set-title">Cancel Call</div>
+    <div class="button-set-subtitle">This will cancel any calls to the staff member</div>
+    <div class="button-container">
+      <div ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" ng-click="InterfaceCtrl.sendMessage(k,'cancel')" class="button">{{v.name}}</div>
+    </div>
   </div>
 </div>
 <div ng-show="InterfaceCtrl.selectedVenue==null || InterfaceCtrl.choosingVenue==true" class="venuechooser">
