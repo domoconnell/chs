@@ -33,7 +33,7 @@
     </div>
   </div>
 </div>
-<div ng-show="InterfaceCtrl.selectedVenue==null || InterfaceCtrl.choosingVenue==true" class="venuechooser">
+<div ng-show="InterfaceCtrl.selectedVenue==null || InterfaceCtrl.choosingVenue==true" ng-click="InterfaceCtrl.choosingVenue=false" class="venuechooser">
   <div class="chooser">
     <div class="title">What venue are you in?</div>
     <div id="chooseScroller" class="scroller"> 

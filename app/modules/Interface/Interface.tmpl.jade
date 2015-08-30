@@ -30,7 +30,7 @@ div
 			div(ng-repeat="(k,v) in InterfaceCtrl.peopleOptions" class="button" ng-click="InterfaceCtrl.sendMessage(k,'cancel')") {{v.name}}
 
 
-div(class="venuechooser" ng-show="InterfaceCtrl.selectedVenue==null || InterfaceCtrl.choosingVenue==true")
+div(class="venuechooser" ng-show="InterfaceCtrl.selectedVenue==null || InterfaceCtrl.choosingVenue==true" ng-click="InterfaceCtrl.choosingVenue=false")
 	div(class="chooser")
 		div(class="title") What venue are you in?
 		div(class="scroller" id="chooseScroller") 
