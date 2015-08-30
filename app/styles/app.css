@@ -26,7 +26,7 @@ body {
 }
 .top-title {
   width: 300px;
-  height: 200px;
+  height: 180px;
   position: relative;
   left: 50%;
   margin-left: -150px;
@@ -35,7 +35,7 @@ body {
 .top-title .logo-container {
   margin-top: 20px;
   display: inline-block;
-  height: 120px;
+  height: 100px;
   width: 300px;
   background-image: url('/assets/peachy.png');
   background-position: center;
@@ -53,7 +53,7 @@ body {
 }
 .top-title .logo-subtitle p {
   margin: 2px;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 .button-set {
   position: relative;
@@ -102,7 +102,7 @@ body {
 .button-set .button-container .button {
   flex: 1;
   -webkit-flex: 1;
-  margin: 20px 40px;
+  margin: 15px 40px;
   border-top-left-radius: 3px;
   -webkit-border-top-left-radius: 3px;
   -moz-border-radius-topleft: 3px;
